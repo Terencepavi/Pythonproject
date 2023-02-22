@@ -7,9 +7,21 @@ class Employee:
         self.emp_name = None
         self.emp_salary = None
         self.emp_performance = None
+        self.__company_code = 105
     @staticmethod
     def print_author_name():
         print("author","Pavithrabalan")
+
+    # getter method
+    def get_company_code(self):
+        return self.__company_code
+
+        # setter method
+    def set_company_code(self, company_code):
+        if company_code > 100:
+            self.__company_code = company_code
+        else:
+            print("Invalid company code so it remains 0")
 
     def display_employee_record(self):
         print(35 *"_")
@@ -19,6 +31,7 @@ class Employee:
         print("Employee Performance:",self.emp_performance)
         print("Comapny Name:",Employee.company_name)
         print("Location:",Employee.company_location)
+        print("Company Code: ", self.__company_code)
         print(35 * "_")
     def calculate_bonus(self):
         if self.emp_performance=="A":
